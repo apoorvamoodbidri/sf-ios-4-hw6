@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440ACA4B1C73E8F900ABA194 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440ACA491C73E8F900ABA194 /* Note+CoreDataProperties.swift */; };
+		440ACA4C1C73E8F900ABA194 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440ACA4A1C73E8F900ABA194 /* Note.swift */; };
 		D1FDFC621C71D63800D6C78C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FDFC611C71D63800D6C78C /* AppDelegate.swift */; };
 		D1FDFC671C71D63800D6C78C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FDFC651C71D63800D6C78C /* Main.storyboard */; };
 		D1FDFC6A1C71D63800D6C78C /* iOS4_HW6.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1FDFC681C71D63800D6C78C /* iOS4_HW6.xcdatamodeld */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440ACA491C73E8F900ABA194 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Note+CoreDataProperties.swift"; path = "../Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		440ACA4A1C73E8F900ABA194 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = ../Note.swift; sourceTree = "<group>"; };
 		D1FDFC5E1C71D63800D6C78C /* iOS4-HW6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS4-HW6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FDFC611C71D63800D6C78C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1FDFC661C71D63800D6C78C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				D1FDFC681C71D63800D6C78C /* iOS4_HW6.xcdatamodeld */,
+				440ACA491C73E8F900ABA194 /* Note+CoreDataProperties.swift */,
+				440ACA4A1C73E8F900ABA194 /* Note.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -169,6 +175,8 @@
 				D1FDFC6A1C71D63800D6C78C /* iOS4_HW6.xcdatamodeld in Sources */,
 				D1FDFC621C71D63800D6C78C /* AppDelegate.swift in Sources */,
 				D1FDFC7A1C71D6D800D6C78C /* NotesTableViewController.swift in Sources */,
+				440ACA4B1C73E8F900ABA194 /* Note+CoreDataProperties.swift in Sources */,
+				440ACA4C1C73E8F900ABA194 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,13 +12,15 @@
 
 import UIKit
 // @TODO 4: import CoreData
+import CoreData 
 
 class NotesTableViewController: UITableViewController, NoteDelegate {
     
     // @TODO 5: add a reference to the sharedContext
+    let managedContext = sharedContext()
     
     // @TODO: note! you'll need to change this app from using Strings to using Notes
-    var notes:[String] = []
+    var notes:[Note] = []
     // var notes:[Note] = []
     
     override func viewDidLoad() {
@@ -31,20 +33,39 @@ class NotesTableViewController: UITableViewController, NoteDelegate {
     // @TODO 6: save the data to disk
     func saveData(note:String) {
         // create a new managed object
+        
         // and insert it into the context
+        let entity = NSEntityDescription.entityForName("Note", inManagedObjectContext: managedContext)
+        
+        let noteEntity = Note(entity:entity! , insertIntoManagedObjectContext: managedContext)
         
         // set its attributes
+       noteEntity.text = note
         
         // commit changes to disk
+        do {
+            try managedContext.save()
+            notes.append(noteEntity)
+            tableView.reloadData()
+        }catch let error as NSError {
+            print ("Could not save due to \(error),\(error.userInfo)")
+        }
     }
     
     // @TODO 7: load the data from disk
     func loadData() {
         // create fetch request
-        
+        let fetchRequest = NSFetchRequest (entityName: "Note")
+
         // ask managedcontext to make the request
-        // if successful store result
+        // if successful store resul
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            notes = results as! [Note]
+        } catch let error as NSError {
+        print("Could not complete due to \(error), \(error.userInfo)")
     }
+}
     
     // MARK: - Note Delegate
     
@@ -52,8 +73,6 @@ class NotesTableViewController: UITableViewController, NoteDelegate {
         saveData(note)
         
         // @TODO: n.b. these two lines may move
-        notes.append(note)
-        tableView.reloadData()
     }
     
     // MARK: - Table view data source

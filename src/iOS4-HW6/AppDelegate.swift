@@ -110,4 +110,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 // @TODO 3: add a function for retrieving the shared context
+func sharedContext() -> NSManagedObjectContext {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let managedContext = appDelegate.managedObjectContext
+    return managedContext
+}
 
