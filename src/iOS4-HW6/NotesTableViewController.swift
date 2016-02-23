@@ -105,6 +105,27 @@ class NotesTableViewController: UITableViewController, NoteDelegate {
         
         return cell
     }
+    //Delete function 
+   override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    switch editingStyle {
+    case .Delete :
+         managedContext.deleteObject(notes[indexPath.row])
+           do{
+            try managedContext.save()
+           } catch{
+            let saveError = error as NSError
+            print(saveError)
+        }
+        
+        notes.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        
+    case .Insert :
+        break
+        
+    default : break
+     }
+    }
     
     // MARK: - Navigation
     
