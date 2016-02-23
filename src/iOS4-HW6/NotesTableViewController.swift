@@ -20,8 +20,8 @@ class NotesTableViewController: UITableViewController, NoteDelegate {
     let managedContext = sharedContext()
     
     // @TODO: note! you'll need to change this app from using Strings to using Notes
-    var notes:[Note] = []
-    // var notes:[Note] = []
+//var notes:[String] = []
+     var notes:[Note] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,13 +88,13 @@ class NotesTableViewController: UITableViewController, NoteDelegate {
         
         // @TODO: once you change the notes array to use Note instead of String, you'll need to toggle the below two blocks
 
-//        // @TODO: USE THIS BLOCK WITH STRING
-//        let text = notes[indexPath.row]
-//        let minimum = min(20, text.characters.count)
-//        let breakIndex = text.startIndex.advancedBy(minimum)
-//        cell.textLabel?.text = text.substringToIndex(breakIndex)
-//        cell.detailTextLabel?.text = text.substringFromIndex(breakIndex)
-//        
+        // @TODO: USE THIS BLOCK WITH STRING
+        let text = notes[indexPath.row].text
+        let minimum = min(20, text!.characters.count)
+        let breakIndex = text!.startIndex.advancedBy(minimum)
+        cell.textLabel?.text = text!.substringToIndex(breakIndex)
+        cell.detailTextLabel?.text = text!.substringFromIndex(breakIndex)
+        
         // @TODO USE THIS BLOCK WITH NOTE
         if let text = notes[indexPath.row].text {
             let minimum = min(20, text.characters.count)
